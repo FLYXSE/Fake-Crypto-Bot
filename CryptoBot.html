@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Crypto Bot</title>
+
+<!-- Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#2f3b42;
+  --card:#35444c;
+  --card-dark:#2b363d;
+  --purple:#b69cff;
+  --purple-soft:#a88cff;
+  --green:#4bd37b;
+  --text:#e9edf0;
+  --muted:#aab3b9;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--bg);
+  font-family:Inter,system-ui,Arial,sans-serif;
+  color:var(--text);
+  display:flex;
+  justify-content:center;
+}
+
+.app{
+  width:390px;
+  padding:16px;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+.header-title{
+  font-size:20px;
+  font-weight:600;
+}
+.header-icons{
+  display:flex;
+  gap:14px;
+  color:var(--muted);
+}
+
+/* гирлянда */
+.garland{
+  height:14px;
+  background:
+    radial-gradient(circle at 5px 7px,#ff4d4d 3px,transparent 4px),
+    radial-gradient(circle at 20px 7px,#ffd24d 3px,transparent 4px),
+    radial-gradient(circle at 35px 7px,#4dff88 3px,transparent 4px),
+    radial-gradient(circle at 50px 7px,#4dd2ff 3px,transparent 4px);
+  background-size:60px 14px;
+  margin-bottom:16px;
+}
+
+/* STATUS */
+.status{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.badge{
+  padding:6px 14px;
+  background:var(--card);
+  border-radius:999px;
+  font-size:13px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.dot{
+  width:10px;height:10px;border-radius:50%;
+  background:var(--green);
+}
+
+/* BALANCE */
+.balance-card{
+  text-align:center;
+  margin-bottom:18px;
+}
+.balance{
+  font-size:36px;
+  font-weight:700;
+}
+.subtitle{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:14px;
+}
+.subtitle span{color:var(--purple)}
+
+/* ACTIONS */
+.actions{
+  display:flex;
+  justify-content:space-between;
+  margin:22px 0;
+}
+.action{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  color:var(--purple);
+  font-size:13px;
+}
+.action-btn{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:#3a4650;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* BANNER */
+.banner{
+  background:#2e5243;
+  border-radius:14px;
+  padding:14px;
+  display:flex;
+  gap:12px;
+  margin-bottom:20px;
+}
+.banner-icon{
+  font-size:26px;
+}
+.banner-title{
+  color:#5cff9a;
+  font-weight:600;
+  font-size:14px;
+}
+.banner-text{
+  font-size:13px;
+}
+
+/* ASSETS */
+.assets-head{
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:10px;
+}
+.asset{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.asset-left{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.coin{
+  width:36px;height:36px;border-radius:50%;
+  background:#3f4f58;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+.asset-name{
+  font-weight:600;
+}
+.asset-sub{
+  font-size:13px;
+  color:var(--muted);
+}
+.up{color:#5cff9a}
+.down{color:#ff6b6b}
+.asset-right{
+  text-align:right;
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-title">Crypto Bot</div>
+    <div class="header-icons">⋮ ✕</div>
+  </div>
+
+  <div class="garland"></div>
+
+  <!-- STATUS -->
+  <div class="status">
+    <div class="badge"><div class="dot"></div>KWIKEN</div>
+    <div class="badge">❄️</div>
+    <div class="badge">💱</div>
+  </div>
+
+  <!-- BALANCE -->
+  <div class="balance-card">
+    <div class="balance">₮ 873.42153</div>
+    <div class="subtitle">Общий баланс в <span>USDT</span></div>
+  </div>
+
+  <!-- ACTIONS -->
+  <div class="actions">
+    <div class="action">
+      <div class="action-btn">⬇</div>
+      Пополнить
+    </div>
+    <div class="action">
+      <div class="action-btn">⬆</div>
+      Вывести
+    </div>
+    <div class="action">
+      <div class="action-btn">⇄</div>
+      Обмен
+    </div>
+    <div class="action">
+      <div class="action-btn">⧉</div>
+      Биржа
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <div class="banner-icon">🎁</div>
+    <div>
+      <div class="banner-title">Новый год с Crypto Bot</div>
+      <div class="banner-text">Криптовалютные подарки всем активным пользователям!</div>
+    </div>
+  </div>
+
+  <!-- ASSETS -->
+  <div class="assets-head">
+    <span>Активы</span>
+    <span style="color:var(--purple)">Скрыть мелкие балансы</span>
+  </div>
+
+  <div class="asset">
+    <div class="asset-left">
+      <div class="coin">₮</div>
+      <div>
+        <div class="asset-name">Tether</div>
+        <div class="asset-sub">$1000 · 0.00%</div>
+      </div>
+    </div>
+    <div class="asset-right">
+      <div>1 USDT</div>
+      <div class="asset-sub">2.93 BYN</div>
+    </div>
+  </div>
+
+  <div class="asset">
+    <div class="asset-left">
+      <div class="coin">◈</div>
+      <div>
+        <div class="asset-name">Toncoin</div>
+        <div class="asset-sub up">$1.49 · +0.62%</div>
+      </div>
+    </div>
+    <div class="asset-right">
+      <div>0.108289832 TON</div>
+      <div class="asset-sub">0.474 BYN</div>
+    </div>
+  </div>
+
+  <div class="asset">
+    <div class="asset-left">
+      <div class="coin">◎</div>
+      <div>
+        <div class="asset-name">Solana</div>
+        <div class="asset-sub down">$127.27 · -0.03%</div>
+      </div>
+    </div>
+    <div class="asset-right">
+      <div>0 SOL</div>
+      <div class="asset-sub">0 BYN</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
