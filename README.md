@@ -1,2 +1,3 @@
 # Fake-Crypto-Bot
-Fake Crypto bot. Фейковая веб-страница @CryptoBot Телеграм Бота. 
+Фейковая веб-страница @CryptoBot Телеграм Бота.
+Написан Ai.
